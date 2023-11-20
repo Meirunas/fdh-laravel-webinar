@@ -15,7 +15,7 @@ class UserController extends Controller
     {
         $users = User::latest()->paginate(5);
 
-        return view('user.index', compact('users'))
+        return view('user.manage', compact('users'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
